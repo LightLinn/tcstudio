@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+{% load static %}
+<body>
+    <div>Hello World</div>
+
+    <br />
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            {{ data.Alt }}
+            <div>123</div>
+            <img class="card-img-top" src="{{ data.ImgPath.url }}" width="300px"/>
+        </div>
+    </div>
+
+    {% for blog in blogs  %}
+        <div>{{ blog.Title }}</div>
+        <div>{{ blog.Content | safe }}</div>
+    {% endfor %}
+</body>
+</html>
